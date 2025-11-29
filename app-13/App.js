@@ -1,0 +1,27 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from './components/Home';
+import Detalhes from './components/Detalhes';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name="Home" 
+          component={Home} 
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen 
+          name="Detalhes" 
+          component={Detalhes} 
+          options={{ title: 'Detalhes do Produto' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
